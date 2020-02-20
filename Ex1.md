@@ -3,7 +3,7 @@
 **▪ Como representar um caminho a ser percorrido por um NPC?**
 
 
-  - É possível definir um gene(vetor) com as posições nas quatro primeiras [Up,Down,Left,Right,Steps].
+  - É possível definir um cromossomo com diversos genes(vetores) com as posições Gene1 [Up,Down,Left,Right,Steps], Gene2[Up,Down,Left,Right,Steps],Gene3[Up,Down,Left,Right,Steps]..., que permite o indivíduo de percorrer um caminho.
 
 
 **▪ Como definir a população inicial (caminhos/cromossomos)?**
