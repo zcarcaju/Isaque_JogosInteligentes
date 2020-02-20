@@ -39,7 +39,7 @@
 ▪ Como criar uma nova população/geração?
 
 
-  Após cruzar diversos pares de indivíduos, o resultado é uma população com diferentes características/alelos com valores distintos, porém, recebendo algumas valores semelhantes de seus pais.
+  Após cruzar diversos pares de indivíduos, o resultado é uma população com diferentes indivíduos com características/alelos com valores distintos(por conta de eventuais mutações), porém, recebendo algumas valores semelhantes de seus pais.
   
   
   
