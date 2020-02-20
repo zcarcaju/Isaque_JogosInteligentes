@@ -44,5 +44,9 @@
   
   
 //Alelo > Posição do vetor
+
+
 //Gene > Vetor de X posições (estrutura definida por mim)
+
+
 //
