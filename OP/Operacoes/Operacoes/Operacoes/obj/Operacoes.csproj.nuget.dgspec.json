@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Operacoes\\Operacoes\\Operacoes\\Operacoes.csproj": {}
+    "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Isaque_JogosInteligentes\\OP\\Operacoes\\Operacoes\\Operacoes\\Operacoes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Operacoes\\Operacoes\\Operacoes\\Operacoes.csproj": {
+    "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Isaque_JogosInteligentes\\OP\\Operacoes\\Operacoes\\Operacoes\\Operacoes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Operacoes\\Operacoes\\Operacoes\\Operacoes.csproj",
+        "projectUniqueName": "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Isaque_JogosInteligentes\\OP\\Operacoes\\Operacoes\\Operacoes\\Operacoes.csproj",
         "projectName": "Operacoes",
-        "projectPath": "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Operacoes\\Operacoes\\Operacoes\\Operacoes.csproj",
+        "projectPath": "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Isaque_JogosInteligentes\\OP\\Operacoes\\Operacoes\\Operacoes\\Operacoes.csproj",
         "packagesPath": "C:\\Users\\Isaque-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Operacoes\\Operacoes\\Operacoes\\obj\\",
+        "outputPath": "C:\\Users\\Isaque-PC\\Documents\\GitHub\\Isaque_JogosInteligentes\\OP\\Operacoes\\Operacoes\\Operacoes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

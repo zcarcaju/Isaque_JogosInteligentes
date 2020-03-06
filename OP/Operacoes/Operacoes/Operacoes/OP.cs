@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Operacoes
 {
-    class Program
+    class OP
     {
         static void Main(string[] args)
         {
@@ -50,9 +50,9 @@ namespace Operacoes
             m_Random = new Random((int)DateTime.UtcNow.Ticks);
         }
 
-        //CROSSOVER
+                                //CROSSOVER
 
-        //CROSSOVER SINGLE POINT
+                    //CROSSOVER SINGLE POINT
 
 
         private void SingleCrossover<T>(T[] parent1, T[] parent2, T[] child1, T[] child2)
@@ -113,7 +113,7 @@ namespace Operacoes
 
 
 
-        //CROSSOVER SIMPLE ARITHMETIC
+                    //CROSSOVER SIMPLE ARITHMETIC
 
         private void SimpleArithmetic(double[] parent1, double[] parent2, double[] child1, double[] child2)
         {
@@ -127,9 +127,9 @@ namespace Operacoes
             }
         }
 
-        //CROSSOVER WHOLE ARITHMETIC
+                    //CROSSOVER WHOLE ARITHMETIC
 
-        private void WholeArithmetic(double[] parent1, double[] parent2, double[] child1, double[] child2)
+        private void WholeArithmeticCrossover(double[] parent1, double[] parent2, double[] child1, double[] child2)
         {
             double alphaSort = m_Random.NextDouble(); //Sortear entre 0 e 1
             
@@ -147,7 +147,7 @@ namespace Operacoes
 
         //CROSSOVER POSITION BASED
 
-        private void WholeArithmetic<T>(Genome<T>[] parent1, Genome<T>[] parent2, Genome<T>[] child1, Genome<T>[] child2)
+        private void PositionBasedCrossover<T>(Genome<T>[] parent1, Genome<T>[] parent2, Genome<T>[] child1, Genome<T>[] child2)
         {
             List<Genome<T>> selectedParent1 = new List<Genome<T>>();
 
@@ -185,9 +185,9 @@ namespace Operacoes
                 }
             }
         }
-                    //MUTAÇÂO
+                                //MUTAÇÂO
 
-        //INVERSÃO DE BITS
+                    //INVERSÃO DE BITS
         
         private void InverseBitsMutate<T>(bool[] bits)
         {
@@ -201,7 +201,7 @@ namespace Operacoes
         }
 
 
-        //INVERSÃO
+                    //INVERSÃO
 
         private void InverseMutate<T>(bool [] bits)
         {
@@ -219,7 +219,7 @@ namespace Operacoes
 
         //INVERSÃO DESLOCADA
 
-        //SWAP
+                    //SWAP
 
         private void SwapMutate<T>(bool [] bits)
         {
@@ -238,6 +238,7 @@ namespace Operacoes
         //INSERÇÃO
 
                     //SELEÇÃO
+                    //ROLETA
 
         private Genome<T> RouletteWheelSelection()
         {
@@ -263,14 +264,77 @@ namespace Operacoes
             }
             return genomes[selectedGenome];
         }
+
+                    //TORNEIO
+        private Genome<T> Tournament()
+        {
+            double [] tour = new double[5];
+            tour[0] = genomes[6].m_Fitness;
+            tour[1] = genomes[23].m_Fitness;
+            tour[2] = genomes[67].m_Fitness;
+            tour[3] = genomes[39].m_Fitness;
+            tour[4] = genomes[87].m_Fitness;
+
+            Array.Sort(tour);
+
+            for(int i = 0; i < genomes.Count; ++i)
+            {
+                if (genomes[i].m_Fitness == tour[4])
+                {
+                    return genomes[i];
+                }
+            }
+
+            return null;
+        }
+
+                    //ELITISMO
+        private List <Genome<T>> Elitism()
+        {
+
+            double[] genomesFitness = new double[genomes.Count];
+
+            for(int i = 0; i < genomes.Count; ++i)
+            {
+                genomesFitness[i] = genomes[i].m_Fitness;
+
+            }
+            
+
+            Array.Sort(genomesFitness);
+
+            List<Genome<T>> eliteGenome = new List<Genome<T>>();
+
+            for(int i = 0; i < genomes.Count; ++i)
+            {
+                if (genomes[i].m_Fitness == genomesFitness.Length -1)
+                {
+                    eliteGenome.Add(genomes[i]);
+                }
+
+                if (genomes[i].m_Fitness == genomesFitness.Length - 2)
+                {
+                    eliteGenome.Add(genomes[i]);
+                }
+
+                if (genomes[i].m_Fitness == genomesFitness.Length - 3)
+                {
+                    eliteGenome.Add(genomes[i]);
+                }
+
+                if (genomes[i].m_Fitness == genomesFitness.Length - 4)
+                {
+                    eliteGenome.Add(genomes[i]);
+                }
+            }
+
+            return eliteGenome;
+        }
     }
 }
     
 
-
     //ROLETA
-
-    //ELITISMO
 
     //ESTADO ESTACIONÁRIO
 
