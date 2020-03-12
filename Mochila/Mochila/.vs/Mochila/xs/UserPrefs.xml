@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{F2143EC6-188A-24AA-912C-64B6F6A5AD9F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Knapsack.cs">
+    <Files>
+      <File FileName="Assets/Knapsack.cs" Line="38" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Mochila" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Knapsack.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2b31e757-ff3f-4a69-bd45-726455fc6e2f" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
