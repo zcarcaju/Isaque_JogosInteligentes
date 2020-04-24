@@ -1,0 +1,15 @@
+Isaque Oliveira
+
+//Algoritmo do problema da Mochila
+
+1 - O usuário deverá setar uma quantidade de itens (mais de 10 itens, menos de 20 itens) com valores e pesos, separados por espaços;
+2 - O usuário deverá definir a capacidade (peso (KG)) que a mochila pode carregar;
+3 - Após setar os valores, pesos e capacidade da mochila, o usuário starta o algorítmo que cria uma população com 70 indivídios (contendo Valor e Peso);
+4 - Após criada a população, é utilizado um médido semelhaante ao da roleta de seleção para inserir itens na mochila, ou seja, quem tem maior valor, tem mais chance de entrar na mochila;
+5 - Os itens são acrescentados na mochila até que a capacidade máxima tenha sido estourada, pois assim, removemos o último item para ficar dentro da capacidade da mochila;
+6 - Após isso, é somado todos os valores de cada item, o resultado dessa soma é considerado nossa fitness;
+8 - Após isso, nós percorremos a população atual para verificar qual indivíduo tem a maior fitness. Esse indivíduo é salvo no vetor que contém os melhores indivíduos de cada geração;
+9 - Após o fim de 100 gerações, o resultado é exibido na tela, mostrando então o mlehor indivíduo dessas 100 gerações e em qual geração ele foi encontrado;
+
+//Cenário de teste 
+Valor = 1 2 3 4 5 6 7 8 9 10 | Peso = 10 9 8 7 6 5 4 3 2 1 | Capacidade: 10
