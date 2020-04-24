@@ -20,6 +20,9 @@ namespace Operacoes
         public double Fitness { get => m_Fitness; set => m_Fitness = value; }
         public int m_Size;
 
+        public int HowManyInKnapsack { get; set; }
+        public int TotalWeight { get; set; }
+
         public Genome(int size)
         {
             m_Size = size;
@@ -37,20 +40,22 @@ namespace Operacoes
     {
         public Genome<T>[] genomes;
 
-        public double m_CrossoverRate = 0.3f;
-        public double m_MutationRate = 0.004f;
-        public int m_PopulationSize = 168;
+        public double m_CrossoverRate = 0.3;
+        public double m_MutationRate = 0.01;
+        public int m_PopulationSize;
 
-        public int m_ChromosomeLength = 10;
-        public int m_GeneLength = 2;
+        public int m_ChromosomeLength;
+        public int m_GeneLength = 1;
 
         Random m_Random;
 
         private bool m_GARunning;
         public bool GARunning { get => m_GARunning; set => m_GARunning = value; }
 
-        public Operations()
+        public Operations(int populationSize, int chromosomeLength)
         {
+            m_PopulationSize = populationSize;
+            m_ChromosomeLength = chromosomeLength;
             genomes = new Genome<T>[m_PopulationSize];
             m_Random = new Random((int)DateTime.UtcNow.Ticks);
             m_GARunning = true;
@@ -236,8 +241,8 @@ namespace Operacoes
         {
             int[] selectedPositions = new int[2];
 
-            selectedPositions[0] = m_Random.Next(m_ChromosomeLength - 1);
-            selectedPositions[1] = m_Random.Next(m_ChromosomeLength - 1);
+            selectedPositions[0] = m_Random.Next(bits.Length);
+            selectedPositions[1] = m_Random.Next(bits.Length);
 
             T temp;
 
