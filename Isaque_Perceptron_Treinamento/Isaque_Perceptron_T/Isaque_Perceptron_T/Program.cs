@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Isaque_Perceptron_T
 {
@@ -7,57 +8,62 @@ namespace Isaque_Perceptron_T
 
         static void Main(string[] args)
         {
-            int numOfInputs;
-            double[] userInputs, userWeights;
-            double bias, output = 0.0, sumInputs = 0.0;
+            double[] value1 = new double[] { 0.3, 0.7 };
+            double[] value2 = new double[] { -0.6, 0.3 };
+            double[] value3 = new double[] { -0.1, -0.8 };
+            double[] value4 = new double[] { 0.1, -0.45 };
 
-            Console.WriteLine("Escreva quantas entradas você quer:");
-            numOfInputs = int.Parse(Console.ReadLine());
-            userInputs = new double[numOfInputs];
-            userWeights = new double[numOfInputs];
+            List<double[]> list = new List<double[]>();
+            list.Add(value1);
+            list.Add(value2);
+            list.Add(value3);
+            list.Add(value4);
 
-            Console.WriteLine("Escreva os valores dos inputs separados por espaço:");
-            string[] userDesiredInputs = Console.ReadLine().Split();
-            Console.WriteLine("Escreva os valores dos pesos separados por espaço:");
-            string[] userDesiredWeights = Console.ReadLine().Split();
-            Console.WriteLine("Escreva seu valor do bias:");
-            bias = double.Parse(Console.ReadLine());
+            double[] vClass = new double[] { 1, 0, 0, 1 };
+            double[] vWeights = new double[] { 0.8, -0.5 };
 
-            //Preencher os vetores com os inputs e os pesos
-            for (int i = 0; i < numOfInputs; ++i)
+            double bias = 0;
+
+
+            for (int i = 0; i < list.Count; ++i)
             {
-                userInputs[i] = double.Parse(userDesiredInputs[i]);
+                Training(list[i], vWeights, 0.5, bias, vClass[i]);
             }
 
-            for (int i = 0; i < numOfInputs; ++i)
+            foreach (double weight in vWeights)
             {
-                userWeights[i] = double.Parse(userDesiredWeights[i]);
+                Console.WriteLine(weight);
             }
-
-            //Somatória
-            for (int i = 0; i < numOfInputs; ++i)
-            {
-                sumInputs += userInputs[i] * userWeights[i];
-            }
-
-            //Bias
-            sumInputs -= bias;
-
-            Sigmoid(sumInputs);
-
-            Console.WriteLine("Output: " + output);
-
-            //Função de ativação (Sigmoide)
-            void Sigmoid(double exp)
-            {
-                output = 1 / (1 + Math.Exp(-sumInputs)); //1 / 1 + E ^ -x
-            }
+            Console.ReadKey();
         }
 
-        //Etapas do perceptron
-        //1. Pegar os inputs e os pesos
-        //2. Fazer a somatória do resultado da multiplicação do input pelo seu respectivo peso
-        //3. Descontar o bias
-        //4. Manda pra função de ativação (sigmoide) =====> Output
+        static void Training(double[] inputs, double[] weights, double learningRate, double bias, double Tclass)
+        {
+            //Output do neurônio
+            double sum = 0;
+            double output = 0;
+            for (int i = 0; i < inputs.Length; ++i)
+            {
+                sum += inputs[i] * weights[i];
+            }
+
+            sum += bias;
+
+            output = sum >= 0 ? 1 : 0;
+
+            //Verificar se precisa treinar o neurônio
+            bool needToTrain = false;
+
+            needToTrain = output == Tclass ? false : true;
+
+            if (needToTrain)
+            {
+                double error = Tclass - output;
+                for (int i = 0; i < weights.Length; ++i)
+                {
+                    weights[i] = weights[i] + (error * learningRate * inputs[i]);
+                }
+            }
+        }
     }
 }
