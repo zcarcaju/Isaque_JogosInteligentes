@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaque_Perceptron_T", "Isaque_Perceptron_T\Isaque_Perceptron_T.csproj", "{E1EDB604-CD9F-468E-83DB-D0E5C79B66E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1EDB604-CD9F-468E-83DB-D0E5C79B66E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1EDB604-CD9F-468E-83DB-D0E5C79B66E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1EDB604-CD9F-468E-83DB-D0E5C79B66E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1EDB604-CD9F-468E-83DB-D0E5C79B66E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63FFEB78-3AAF-4F2F-9908-0FDDE88438DA}
+	EndGlobalSection
+EndGlobal
