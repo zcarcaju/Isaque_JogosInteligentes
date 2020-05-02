@@ -201,6 +201,7 @@ public class Knapsack : MonoBehaviour
 
         while (totalWeight < knapsackCapacity)
         {
+
             for (int i = 0; i < bits.Length; ++i)
             {
                 valueTotal += bits[i].Value;
@@ -216,6 +217,10 @@ public class Knapsack : MonoBehaviour
                             break;
                         }
                     }
+                }
+                if (selectedItensKnapsack.Count >= m_Size)
+                {
+                    break;
                 }
             }
         }
